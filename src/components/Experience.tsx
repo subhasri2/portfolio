@@ -1,5 +1,7 @@
 'use client';
 
+import { getAssetPath } from '@/lib/basePath';
+
 import { useState } from 'react';
 import { Calendar, MapPin, ChevronLeft, ChevronRight, Cloud, Container, GitBranch, Terminal, Database, Shield, Lock, Activity, Cpu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -166,7 +168,7 @@ export function Experience() {
                                         <div className="w-full h-full p-8 bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700 flex flex-col items-center justify-center text-white">
                                             <div className="inline-flex items-center justify-center w-32 h-32 mb-6 bg-white p-4 rounded-2xl shadow-lg">
                                                 <img
-                                                    src={experience.image}
+                                                    src={getAssetPath(experience.image)}
                                                     alt={experience.company}
                                                     className="w-full h-full object-contain"
                                                 />

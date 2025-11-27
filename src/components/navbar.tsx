@@ -7,6 +7,7 @@ import { Menu, X, Sun, Moon, Github, Linkedin } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { getAssetPath } from "@/lib/basePath"
 
 const navLinks = [
     { name: "About", href: "#about" },
@@ -66,7 +67,7 @@ export function Navbar() {
                         <span className="sr-only">Toggle theme</span>
                     </Button>
                     <Button variant="outline" size="sm" asChild>
-                        <Link href="/resume.pdf" target="_blank">Resume</Link>
+                        <Link href={getAssetPath("/Subha_DevOps_Resume.pdf")} target="_blank">Resume</Link>
                     </Button>
                 </nav>
 
@@ -112,7 +113,7 @@ export function Navbar() {
                                 </Link>
                             ))}
                             <Button variant="outline" className="w-full" asChild>
-                                <Link href="/resume.pdf" target="_blank">Resume</Link>
+                                <Link href={getAssetPath("/Subha_DevOps_Resume.pdf")} target="_blank">Resume</Link>
                             </Button>
                         </div>
                     </motion.div>
