@@ -107,10 +107,10 @@ export function Hero() {
                         <span className="text-xs md:text-sm font-bold text-slate-900 dark:text-white">Resume</span>
                     </a>
                     <a
-                        href="mailto:subhasrimaddela1@gmail.com"
+                        href="mailto:subhasrimaddela01@gmail.com"
                         className="group flex flex-col items-center gap-2"
                         aria-label="Email"
-                        title="subhasrimaddela1@gmail.com"
+                        title="subhasrimaddela01@gmail.com"
                     >
                         <div className="transition-transform group-hover:scale-110 duration-300">
                             <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">

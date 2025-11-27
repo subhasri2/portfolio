@@ -20,7 +20,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     // Construct mailto link
     const subject = `Portfolio Contact from ${formData.firstName} ${formData.lastName}`;
     const body = `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:subhasrimaddela1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:subhasrimaddela01@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Open email client
     window.location.href = mailtoLink;

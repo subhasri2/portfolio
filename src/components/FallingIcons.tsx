@@ -36,7 +36,7 @@ export function FallingIcons() {
       // Start from further right to account for leftward movement
       left: Math.random() * 150 - 20,
       animationDuration: 18 + Math.random() * 12,
-      animationDelay: Math.random() * 15,
+      animationDelay: -(Math.random() * 30), // Negative delay makes them start "mid-fall" immediately
       size: 40, // Fixed size for all icons
       opacity: 0.15 + Math.random() * 0.25
     };
@@ -50,9 +50,9 @@ export function FallingIcons() {
           className="absolute falling-icon-slanted"
           style={{
             left: `${item.left}%`,
+            top: '-20vh', // Start off-screen to prevent "stuck at top" issue during delay
             width: `${item.size}px`,
             height: `${item.size}px`,
-            opacity: item.opacity,
             animationDuration: `${item.animationDuration}s`,
             animationDelay: `${item.animationDelay}s`
           }}
@@ -61,6 +61,7 @@ export function FallingIcons() {
             src={item.url}
             alt={item.name}
             className="w-full h-full object-contain"
+            style={{ opacity: item.opacity }} // Apply opacity to image so it persists through container animation
             loading="lazy"
           />
         </div>
