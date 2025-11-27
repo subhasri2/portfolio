@@ -6,21 +6,21 @@ export function Hobbies() {
   const hobbies = [
     {
       title: 'Sports',
-      description: 'Playing volleyball and badminton to stay active and competitive. I also love hitting the gym to maintain fitness and strength.',
+      description: 'I enjoy playing volleyball and badminton to stay active and competitive. I also love hitting the gym to maintain fitness and strength.',
       icon: Dumbbell,
       image: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&q=80',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Reading',
-      description: 'Fan of Sidney Sheldon, especially The Doomsday Conspiracy. Also love the Hunger Games series and Harry Potter series.',
+      description: 'I am a fan of Sidney Sheldon, especially The Doomsday Conspiracy. I also love the Hunger Games series and Harry Potter series.',
       icon: BookOpen,
       image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80',
       color: 'from-purple-500 to-pink-500'
     },
     {
       title: 'Tech & Learning',
-      description: 'UI/UX design and prototyping, building custom dashboards for monitoring and analytics, and running homelab experiments to test new technologies.',
+      description: 'I practice UI/UX design and prototyping, build custom dashboards for monitoring and analytics, and run homelab experiments to test new technologies.',
       icon: Code,
       image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80',
       color: 'from-green-500 to-emerald-500'

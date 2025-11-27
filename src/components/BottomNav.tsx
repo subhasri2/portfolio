@@ -1,4 +1,4 @@
-import { User, Briefcase, Code2, Rocket, Heart, Mail } from 'lucide-react';
+import { User, Briefcase, Code2, Rocket, Heart, Mail, GraduationCap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface BottomNavProps {
@@ -13,6 +13,7 @@ export function BottomNav({ onOpenContact }: BottomNavProps) {
         { id: 'experience', icon: Briefcase, label: 'Experience', href: '#experience' },
         { id: 'skills', icon: Code2, label: 'Skills', href: '#skills' },
         { id: 'projects', icon: Rocket, label: 'Projects', href: '#projects' },
+        { id: 'education', icon: GraduationCap, label: 'Education', href: '#education' },
         { id: 'hobbies', icon: Heart, label: 'Hobbies', href: '#hobbies' },
     ];
 
@@ -49,8 +50,8 @@ export function BottomNav({ onOpenContact }: BottomNavProps) {
                             key={item.id}
                             href={item.href}
                             className={`relative group p-3 rounded-full transition-all duration-300 ${isActive
-                                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-110'
-                                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400'
+                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-110'
+                                : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400'
                                 }`}
                             aria-label={item.label}
                         >

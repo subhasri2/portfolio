@@ -80,7 +80,7 @@ export function About() {
             <div className="p-6 bg-slate-900/50 rounded-xl border border-slate-800 hover:border-purple-500/50 transition-colors">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h4 className="text-xl font-medium text-white">Bachelor of Technology — Electronics and Communication Engineering</h4>
+                  <h4 className="text-xl font-medium text-white">Bachelor of Technology in Electronics and Communication Engineering</h4>
                   <p className="text-purple-400">Vardhaman College of Engineering</p>
                 </div>
                 <span className="px-3 py-1 bg-purple-500/10 text-purple-300 rounded-full text-sm">2018 - 2022</span>

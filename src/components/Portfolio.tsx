@@ -4,6 +4,7 @@ import { Hero } from './Hero';
 import { Experience } from './Experience';
 import { Skills } from './Skills';
 import { Projects } from './Projects';
+import { Education } from './Education';
 import { Hobbies } from './Hobbies';
 import { BottomNav } from './BottomNav';
 import { useEffect, useState } from 'react';
@@ -41,10 +42,13 @@ export function Portfolio() {
       </button>
 
       <Hero />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Hobbies />
+      <div className="flex flex-col gap-10">
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+        <Hobbies />
+      </div>
 
       {/* Get In Touch Section */}
       <div className="py-16 text-center">
