@@ -66,7 +66,7 @@ export function Hero() {
                         <span className="text-xs md:text-sm font-bold text-slate-900 dark:text-white">GitHub</span>
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/subha-sri-maddela/"
+                        href="https://www.linkedin.com/in/subha-m733/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex flex-col items-center gap-2"
@@ -81,7 +81,7 @@ export function Hero() {
                         <span className="text-xs md:text-sm font-bold text-slate-900 dark:text-white">LinkedIn</span>
                     </a>
                     <a
-                        href={getAssetPath("/Subha_DevOps_Resume.pdf")}
+                        href={getAssetPath("/Subha_Resume_DevOps.pdf")}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex flex-col items-center gap-2"

@@ -14,7 +14,7 @@ export function Footer() {
                         <Github className="h-5 w-5" />
                         <span className="sr-only">GitHub</span>
                     </Link>
-                    <Link href="https://www.linkedin.com/in/subha-sri-maddela/" target="_blank" className="text-slate hover:text-teal transition-colors">
+                    <Link href="https://www.linkedin.com/in/subha-m733/" target="_blank" className="text-slate hover:text-teal transition-colors">
                         <Linkedin className="h-5 w-5" />
                         <span className="sr-only">LinkedIn</span>
                     </Link>

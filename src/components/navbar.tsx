@@ -68,7 +68,7 @@ export function Navbar() {
                         <span className="sr-only">Toggle theme</span>
                     </Button>
                     <Button variant="outline" size="sm" asChild>
-                        <Link href={getAssetPath("/Subha_DevOps_Resume.pdf")} target="_blank">Resume</Link>
+                        <Link href={getAssetPath("/Subha_Resume_DevOps.pdf")} target="_blank">Resume</Link>
                     </Button>
                 </nav>
 
@@ -114,7 +114,7 @@ export function Navbar() {
                                 </Link>
                             ))}
                             <Button variant="outline" className="w-full" asChild>
-                                <Link href={getAssetPath("/Subha_DevOps_Resume.pdf")} target="_blank">Resume</Link>
+                                <Link href={getAssetPath("/Subha_Resume_DevOps.pdf")} target="_blank">Resume</Link>
                             </Button>
                         </div>
                     </motion.div>
