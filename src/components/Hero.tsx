@@ -43,7 +43,7 @@ export function Hero() {
 
                 <div className="mb-12 max-w-3xl mx-auto bg-white/50 dark:bg-slate-900/50 backdrop-blur-md p-8 rounded-2xl border border-white/20 dark:border-slate-700/30 shadow-xl">
                     <p className="text-lg md:text-xl text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
-                        I’m a DevOps and Cloud Engineer with 3+ years of experience specializing in CI/CD automation, multi-cloud infrastructure, and Kubernetes-based deployments. I’ve worked across AWS, Azure, and GCP environments, designing scalable, secure, and automated systems.
+                        I’m a DevOps and Cloud Engineer with 4+ years of experience specializing in CI/CD automation, multi-cloud infrastructure, and Kubernetes-based deployments. I’ve worked across AWS, Azure, and GCP environments, designing scalable, secure, and automated systems.
                     </p>
                 </div>
 
