@@ -1,21 +1,15 @@
-import { Mail, MapPin, Linkedin, Github, Send } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, MapPin, Linkedin, Github, Send, Loader2 } from 'lucide-react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
 export function Contact() {
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Form submission logic would go here
-        console.log('Form submitted:', formData);
-        alert('Thanks for reaching out! This is a demo form.');
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
@@ -44,8 +38,8 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="mb-1 text-slate-600 dark:text-slate-400">Email</p>
-                                    <a href="mailto:contact@example.com" className="text-slate-900 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                        contact@example.com
+                                    <a href="mailto:subhasrimaddela01@gmail.com" className="text-slate-900 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                        subhasrimaddela01@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -94,7 +88,38 @@ export function Contact() {
                     </div>
 
                     <div>
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form
+                            onSubmit={async (e: FormEvent) => {
+                                e.preventDefault();
+                                setStatus('sending');
+                                try {
+                                    const res = await fetch("https://formsubmit.co/ajax/subhasrimaddela01@gmail.com", {
+                                        method: "POST",
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'Accept': 'application/json'
+                                        },
+                                        body: JSON.stringify(formData)
+                                    });
+
+                                    if (res.ok) {
+                                        setStatus('success');
+                                        setFormData({ name: '', email: '', message: '' });
+                                    } else {
+                                        setStatus('error');
+                                    }
+                                } catch (error) {
+                                    setStatus('error');
+                                }
+                            }}
+                            className="space-y-6"
+                        >
+                            {/* Honeypot for spam protection */}
+                            <input type="text" name="_honey" style={{ display: 'none' }} />
+
+                            {/* Disable Captcha */}
+                            <input type="hidden" name="_captcha" value="false" />
+
                             <div>
                                 <label htmlFor="name" className="block mb-2 text-slate-700 dark:text-slate-300">
                                     Name
@@ -106,7 +131,8 @@ export function Contact() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100"
+                                    disabled={status === 'sending'}
+                                    className="w-full px-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100 disabled:opacity-50"
                                     placeholder="Your name"
                                 />
                             </div>
@@ -122,7 +148,8 @@ export function Contact() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100"
+                                    disabled={status === 'sending'}
+                                    className="w-full px-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100 disabled:opacity-50"
                                     placeholder="your@email.com"
                                 />
                             </div>
@@ -138,18 +165,41 @@ export function Contact() {
                                     onChange={handleChange}
                                     required
                                     rows={5}
-                                    className="w-full px-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100 resize-none"
+                                    disabled={status === 'sending'}
+                                    className="w-full px-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-slate-900 dark:text-slate-100 resize-none disabled:opacity-50"
                                     placeholder="Tell me about your project..."
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2"
+                                disabled={status === 'sending'}
+                                className="w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
-                                <span>Send Message</span>
-                                <Send className="w-4 h-4" />
+                                {status === 'sending' ? (
+                                    <>
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        <span>Sending...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>Send Message</span>
+                                        <Send className="w-4 h-4" />
+                                    </>
+                                )}
                             </button>
+
+                            {status === 'success' && (
+                                <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 rounded-lg text-center">
+                                    Message sent successfully!
+                                </div>
+                            )}
+
+                            {status === 'error' && (
+                                <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 rounded-lg text-center">
+                                    Something went wrong. Please try again.
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
