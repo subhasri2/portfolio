@@ -20,7 +20,7 @@ export function About() {
 
           <div className="space-y-6">
             <p className="text-slate-300">
-              I’m a DevOps and Cloud Engineer with 3+ years of experience specializing in CI/CD automation, multi-cloud infrastructure, and Kubernetes-based deployments. I’ve worked across AWS, Azure, and GCP environments, designing scalable, secure, and automated systems using tools like Terraform, Jenkins, GitLab, Docker, and Helm.
+              I’m a DevOps and Cloud Engineer with 4+ years of experience specializing in CI/CD automation, multi-cloud infrastructure, and Kubernetes-based deployments. I’ve worked across AWS, Azure, and GCP environments, designing scalable, secure, and automated systems using tools like Terraform, Jenkins, GitLab, Docker, and Helm.
             </p>
 
             <p className="text-slate-300">
